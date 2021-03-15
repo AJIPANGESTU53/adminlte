@@ -31,3 +31,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/book/index', [BookController::class, 'create'])->name('create');
+Route::get('admin/home', [App\Http\Controllers\AdminController::class,'index'])
+          ->name('admin.home')
+          ->middleware('is_admin');
